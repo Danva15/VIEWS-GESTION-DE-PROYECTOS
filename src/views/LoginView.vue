@@ -1,11 +1,11 @@
 <template>
   <div class="login-container">
-    <div class="header">
+    <!--<div class="header">
       <div class="logo">
         <img src="@/assets/lobo blanco.png" alt="Linex Logo" />
         <span class="linex-text">LINEX</span>
       </div>
-    </div>
+    </div>-->
     <div class="login-box">
       <h2>LOGIN</h2>
       <form @submit.prevent="handleLogin">
@@ -26,25 +26,29 @@
   </div>
 </template>
 
-<script lang="ts">
-export default {
-  data() {
-    return {
-      email: '',
-      password: ''
-    };
-  },
-  methods: {
-    handleLogin() {
-      console.log("Logging in with", this.email, this.password);// Aquí puedes manejar la autenticación
-    },
-    forgot () {
-      this.$router.push('/password')
-    },
-    signup() {
-      this.$router.push('/register')
-    }
+<script setup lang="ts">
+import { ref } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+const email = ref('');
+const password = ref('');
+
+const handleLogin = () => {
+  if (email.value && password.value) {
+    console.log('Logging in with', email.value, password.value);
+    router.push('/dashboard'); // ✅ Redirige al Dashboard si las credenciales están llenas
+  } else {
+    alert('Por favor, ingrese sus credenciales.');
   }
+};
+
+const forgot = () => {
+  router.push('/password');
+};
+
+const signup = () => {
+  router.push('/register');
 };
 </script>
 
@@ -53,9 +57,8 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   height: 100vh;
-  background: url('@/assets/fondo.jpg') no-repeat center center/cover;
+  /*background: url('@/assets/fondo.jpg') no-repeat center center/cover;*/
   position: relative;
 }
 

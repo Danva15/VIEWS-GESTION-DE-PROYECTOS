@@ -2,7 +2,7 @@
   <div class="login-container">
     <div class="header">
       <div class="logo">
-        <img src="@/assets/lobo blanco.png" alt="Linex Logo" />
+        <img src="@/assets/loboLogo.png" alt="Linex Logo" />
         <span class="linex-text">LINEX</span>
       </div>
     </div>
@@ -14,7 +14,7 @@
         <input type="email" v-model="email" placeholder="Email" required />
         <input type="password" v-model="password" placeholder="Password" required />
 
-        <button type="submit" >REGISTER</button>
+        <button type="submit">REGISTER</button>
       </form>
       <p class="signup-text" @click="inicio"><a href="#">LOG IN</a></p>
     </div>
@@ -22,24 +22,23 @@
 </template>
 
 <script lang="ts">
-
 export default {
   data() {
     return {
       name: '',
       email: '',
-      password: ''
-    };
+      password: '',
+    }
   },
   methods: {
     handleRegister() {
-      console.log("User registered successfully", this.name, this.email);
+      console.log('User registered successfully', this.name, this.email)
     },
     inicio() {
       this.$router.push('/login')
-    }
-  }
-};
+    },
+  },
+}
 </script>
 
 <style scoped>
@@ -49,7 +48,7 @@ export default {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: url('@/assets/fondo.jpg') no-repeat center center/cover;
+  /*background: url('@/assets/fondo.jpg') no-repeat center center/cover;*/
   position: relative;
 }
 

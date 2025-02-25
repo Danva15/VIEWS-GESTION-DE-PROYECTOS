@@ -1,11 +1,11 @@
 <template>
   <div class="login-container">
-    <div class="header">
+    <!--<div class="header"> 
       <div class="logo">
-        <img src="@/assets/lobo blanco.png" alt="Linex Logo" />
+        <img src="@/assets/loboLogo.png" alt="Linex Logo" />
         <span class="linex-text">LINEX</span>
       </div>
-    </div>
+    </div>-->
 
     <div class="login-box">
       <div class="password-icon">
@@ -27,22 +27,22 @@ export default {
   data() {
     return {
       newPassword: '',
-      repeatPassword: ''
-    };
+      repeatPassword: '',
+    }
   },
   methods: {
     handleResetPassword() {
       if (this.newPassword === this.repeatPassword) {
-        console.log("Password changed successfully");
+        console.log('Password changed successfully')
       } else {
-        alert("Passwords do not match");
+        alert('Passwords do not match')
       }
     },
     menu() {
       this.$router.push('/login')
-    }
-  }
-};
+    },
+  },
+}
 </script>
 
 <style scoped>
@@ -52,7 +52,7 @@ export default {
   align-items: center;
   justify-content: center;
   height: 100vh;
-  background: url('@/assets/fondo.jpg') no-repeat center center/cover;
+  /*background: url('@/assets/fondo.jpg') no-repeat center center/cover;*/
   position: relative;
 }
 
